@@ -5,7 +5,6 @@ import {
 	useScroll,
 	useTransform,
 } from "framer-motion";
-import { useState, useEffect } from "react";
 
 type Props = {};
 

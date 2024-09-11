@@ -1,12 +1,12 @@
 "use client";
 import {
+	AnimatePresence,
 	motion,
+	useMotionValueEvent,
 	useScroll,
 	useTransform,
-	AnimatePresence,
-	useMotionValueEvent,
 } from "framer-motion";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 const HeroSection = () => {
 	const { scrollYProgress, scrollY } = useScroll();

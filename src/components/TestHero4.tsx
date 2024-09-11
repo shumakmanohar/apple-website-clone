@@ -1,13 +1,13 @@
 "use client";
 
 import {
+	AnimatePresence,
 	motion,
+	useMotionValueEvent,
 	useScroll,
 	useTransform,
-	AnimatePresence,
-	useMotionValueEvent,
 } from "framer-motion";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 type Props = {};
 
@@ -91,9 +91,9 @@ const TestHero4 = (props: Props) => {
 					/>
 				</motion.div>
 
-				<div className="relative z-10 flex items-center justify-center h-full text-white">
+				{/* <div className="relative z-10 flex items-center justify-center h-full text-white">
 					<h1 className="text-4xl md:text-6xl font-bold">Your Hero Content</h1>
-				</div>
+				</div> */}
 			</div>
 		</section>
 	);

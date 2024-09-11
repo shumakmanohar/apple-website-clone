@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useScroll, useTransform } from "framer-motion";
-import React, { useRef } from "react";
+import { useRef } from "react";
 
 export default function HorizontalScroll({ endValue = "-100%" }) {
 	const scrollRef = useRef(null);

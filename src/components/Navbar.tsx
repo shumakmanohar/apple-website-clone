@@ -5,25 +5,47 @@ import Link from "next/link";
 import { BsApple } from "react-icons/bs";
 import { BsBag } from "react-icons/bs";
 import { GoSearch } from "react-icons/go";
+import MegaMenu from "./MegaMenu";
+import { useState } from "react";
+import { AnimatePresence } from "framer-motion";
 
-type Props = {};
+const Navbar = () => {
+	const [showMegaMenu, setShowMegaMenu] = useState(false);
+	const [subMenu, setSubMenu] = useState<null | any>(["Test", "Test"]);
 
-const Navbar = (props: Props) => {
 	return (
 		<>
 			{/* NavMenu with Links */}
 			<div className="bg-white min-h-11">
-				<div className="max-w-7xl mx-auto py-3 bg-red-200 flex">
+				<div className="max-w-7xl mx-auto py-3  flex">
 					<BsApple size={18} className="opacity-70" />
 					<nav className="w-full">
-						<ul className="flex bg-green-100  items-center w-full justify-evenly">
+						<ul className="flex  items-center w-full justify-evenly">
 							{NAV_LINKS.map((navlink) => {
 								return (
-									<li>
-										<Link href={"#"} className="text-xs text-black/70">
-											{navlink.category}
-										</Link>
-									</li>
+									<>
+										<li key={navlink.category}>
+											<Link
+												href={"#"}
+												className="text-xs text-black/70 "
+												onMouseEnter={(e) => {
+													setSubMenu(navlink.product);
+													setShowMegaMenu(true);
+												}}
+											>
+												{navlink.category}
+											</Link>
+										</li>
+										{navlink.product && showMegaMenu && (
+											<AnimatePresence>
+												<MegaMenu
+													product={subMenu}
+													setShowMegaMenu={setShowMegaMenu}
+													setSubMenu={setSubMenu}
+												/>
+											</AnimatePresence>
+										)}
+									</>
 								);
 							})}
 							{/* Search Icon */}

@@ -1,7 +1,7 @@
 "use client";
-import React, { useRef } from "react";
-import { motion, useInView, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
+import { useRef } from "react";
 import AppleTvLogo from "../../public/apple_tv_logo.png";
 import screen1 from "../../public/screen_1.jpg";
 import screen2 from "../../public/screen_2.jpg";

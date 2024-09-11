@@ -1,9 +1,6 @@
-import React from "react";
 import HorizontalScroll from "./HorizontalScroll";
 
-type Props = {};
-
-const CarouselSection = (props: Props) => {
+const CarouselSection = () => {
 	return (
 		<section>
 			<div>

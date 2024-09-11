@@ -1,8 +1,7 @@
-import React from "react";
 import { motion, useInView } from "framer-motion";
+import Image from "next/image";
 import { useRef } from "react";
 import AppleTvLogo from "../../public/apple_tv_logo.png";
-import Image from "next/image";
 import screen1 from "../../public/screen_1.jpg";
 import screen2 from "../../public/screen_2.jpg";
 

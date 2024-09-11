@@ -2,13 +2,13 @@
 
 type Props = {};
 import {
+	AnimatePresence,
 	motion,
+	useMotionValueEvent,
 	useScroll,
 	useTransform,
-	AnimatePresence,
-	useMotionValueEvent,
 } from "framer-motion";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 const TestHero3 = (props: Props) => {
 	const { scrollYProgress, scrollY } = useScroll();

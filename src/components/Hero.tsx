@@ -1,14 +1,10 @@
 "use client";
 import Image from "next/image";
-import heroTV from "../../public/hero_tv.jpg";
 import heroGradient from "../../public/hero_gradient.png";
-import heroStatic from "../../public/hero_static.jpg";
 import heroTvRemote from "../../public/hero_tvremote.png";
-import heroDyno from "../../public/hero_dino.jpg";
 
-type Props = {};
 //w-[918px] h-[516px]
-const Hero = (props: Props) => {
+const Hero = () => {
 	return (
 		<div className="bg-black h-[200vh]">
 			<div className="">
