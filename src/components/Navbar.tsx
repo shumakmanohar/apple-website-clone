@@ -34,7 +34,7 @@ const Navbar = (props: Props) => {
 				</div>
 			</div>
 			{/* Section Menu */}
-			<div className=" bg-white min-h-11 sticky top-0 z-10">
+			<div className=" bg-white min-h-11 sticky top-0 z-20">
 				<div className="max-w-7xl mx-auto py-3 mb-1 flex items-center justify-between">
 					<h3 className="text-xl font-semibold ">Apple TV 4K</h3>
 					<div>

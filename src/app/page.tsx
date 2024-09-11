@@ -6,12 +6,16 @@ import HorizontalScroll from "@/components/HorizontalScroll";
 import Navbar from "@/components/Navbar";
 import ScrollingSection from "@/components/ScrollSection";
 import StickyScroll from "@/components/StickyScroll";
+import StickyScroll2 from "@/components/StickyScroll2";
+import StickyScroll3 from "@/components/StickyScroll3";
 import HeroSection from "@/components/Test6";
 import TestHero from "@/components/TestHero";
 import TestHero2 from "@/components/TestHero2";
 import TestHero3 from "@/components/TestHero3";
 import TestHero4 from "@/components/TestHero4";
 import TestHero5 from "@/components/TestHero5";
+import TestScroll4 from "@/components/TestScroll4";
+import TestSticky from "@/components/TestSticky";
 import TestHero7 from "@/components/TextHero7";
 import Image from "next/image";
 
@@ -26,8 +30,12 @@ export default function Home() {
 			<TestHero4 />
 			<CarouselSection />
 			<StickyScroll />
+			<StickyScroll2 />
+			{/* <TestScroll4 /> */}
+			{/* <StickyScroll3 /> */}
+			{/* <TestSticky /> */}
 			{/* <ScrollingSection /> */}
-			<p>Drop in Test</p>
+
 			{/* <TestHero5 /> */}
 			{/* <HeroSection /> */}
 			{/* <TestHero7 /> */}

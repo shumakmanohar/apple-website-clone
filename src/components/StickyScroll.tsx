@@ -18,8 +18,6 @@ const StickyScroll = (props: Props) => {
 	const sectionTwoInView = useInView(ref_sectionTwo);
 	const sectionThreeInView = useInView(ref_sectionThree);
 
-	console.log(sectionTwoInView);
-
 	return (
 		<div className="container mx-auto h-[300vh] mt-40">
 			{/* Container for all sections */}

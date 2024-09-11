@@ -36,7 +36,7 @@ const TestHero4 = (props: Props) => {
 		if (latest > 2) {
 			setBoder(true);
 		}
-		if (latest > 750) {
+		if (latest > 1000) {
 			setShowVideo(false); // Smoothly remove video
 			setImageOpacity(1);
 		} else {
