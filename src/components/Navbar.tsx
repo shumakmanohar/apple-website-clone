@@ -7,11 +7,34 @@ import { BsBag } from "react-icons/bs";
 import { GoSearch } from "react-icons/go";
 import MegaMenu from "./MegaMenu";
 import { useState } from "react";
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 
 const Navbar = () => {
 	const [showMegaMenu, setShowMegaMenu] = useState(false);
 	const [subMenu, setSubMenu] = useState<null | any>(["Test", "Test"]);
+
+	const dropInVariants = {
+		initial: {
+			y: 0, // Start slightly above
+			opacity: 0,
+		},
+		animate: {
+			y: 0, // Drop down to normal position
+			opacity: 1,
+			transition: {
+				duration: 0.3,
+				ease: "easeOut",
+			},
+		},
+		exit: {
+			y: "-10%", // Drop up to hide
+			opacity: 0,
+			transition: {
+				duration: 0.3,
+				ease: "easeIn",
+			},
+		},
+	};
 
 	return (
 		<>
@@ -36,15 +59,34 @@ const Navbar = () => {
 												{navlink.category}
 											</Link>
 										</li>
-										{navlink.product && showMegaMenu && (
-											<AnimatePresence>
-												<MegaMenu
-													product={subMenu}
-													setShowMegaMenu={setShowMegaMenu}
-													setSubMenu={setSubMenu}
-												/>
-											</AnimatePresence>
-										)}
+										<AnimatePresence>
+											{navlink.product && showMegaMenu && (
+												<motion.div
+													initial={{ y: -200 }}
+													animate={{ y: 0 }}
+													exit={{ y: -200 }}
+													transition={{
+														y: { type: "tween", stiffness: 100 },
+														duration: 0.2,
+													}}
+													className="w-screen h-screen absolute top-14 z-30 right-0"
+												>
+													{/* Back drop Blur */}
+													<div
+														onMouseEnter={() => {
+															setShowMegaMenu(false);
+															setSubMenu(null);
+														}}
+														className=" bg-white/10 backdrop-blur-[2px] h-full w-full absolute"
+													></div>
+													<MegaMenu
+														product={subMenu}
+														setShowMegaMenu={setShowMegaMenu}
+														setSubMenu={setSubMenu}
+													/>
+												</motion.div>
+											)}
+										</AnimatePresence>
 									</>
 								);
 							})}

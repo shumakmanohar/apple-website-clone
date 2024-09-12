@@ -1,45 +1,20 @@
 import { motion } from "framer-motion";
 
 const MegaMenu = ({ product, setShowMegaMenu, setSubMenu }: any) => {
-	const dropInVariants = {
-		initial: {
-			y: "-10%", // Start slightly above
-			opacity: 0,
-		},
-		animate: {
-			y: "0", // Drop down to normal position
-			opacity: 1,
-			transition: {
-				duration: 0.3,
-				ease: "easeOut",
-			},
-		},
-		exit: {
-			y: "-10%", // Drop up to hide
-			opacity: 0,
-			transition: {
-				duration: 0.3,
-				ease: "easeIn",
-			},
-		},
-	};
 	return (
-		<motion.div
-			id="mega-menu"
-			className="absolute z-30 top-14 left-0 w-screen min-h-screen"
-			variants={dropInVariants}
-			initial="initial"
-			animate="animate"
-			exit="exit"
+		<div
+			className="w-full"
+			// id="mega-menu"
+			// className="absolute z-30 top-14 left-0 w-screen min-h-screen"
 		>
 			{/* Backdrop area */}
-			<div
+			{/* <div
 				className="absolute inset-0 bg-white/20 backdrop-blur-sm"
 				onMouseEnter={() => {
 					setShowMegaMenu(false);
 					setSubMenu(null);
 				}}
-			></div>
+			></div> */}
 
 			{/* Content area */}
 			<div className="relative grid grid-cols-5 gap-5 px-40 py-10 bg-white">
@@ -61,7 +36,7 @@ const MegaMenu = ({ product, setShowMegaMenu, setSubMenu }: any) => {
 					</div>
 				))}
 			</div>
-		</motion.div>
+		</div>
 	);
 };
 
