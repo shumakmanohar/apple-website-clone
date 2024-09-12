@@ -61,24 +61,16 @@ const Navbar = () => {
 										</li>
 										<AnimatePresence>
 											{navlink.product && showMegaMenu && (
-												<motion.div
-													initial={{ y: -200 }}
-													animate={{ y: 0 }}
-													exit={{ y: -200 }}
-													transition={{
-														y: { type: "tween", stiffness: 100 },
-														duration: 0.2,
-													}}
-													className="w-screen h-screen absolute top-14 z-30 right-0"
-												>
+												<motion.div className="w-screen h-screen absolute top-14 z-30 right-0">
 													{/* Back drop Blur */}
-													<div
+													<motion.div
 														onMouseEnter={() => {
 															setShowMegaMenu(false);
 															setSubMenu(null);
 														}}
+														exit={{ opacity: 0 }}
 														className=" bg-white/10 backdrop-blur-[2px] h-full w-full absolute"
-													></div>
+													></motion.div>
 													<MegaMenu
 														product={subMenu}
 														setShowMegaMenu={setShowMegaMenu}

@@ -2,8 +2,9 @@ import { motion } from "framer-motion";
 
 const MegaMenu = ({ product, setShowMegaMenu, setSubMenu }: any) => {
 	return (
-		<div
-			className="w-full"
+		<motion.div
+			className="w-full overflow-hidden"
+
 			// id="mega-menu"
 			// className="absolute z-30 top-14 left-0 w-screen min-h-screen"
 		>
@@ -17,7 +18,17 @@ const MegaMenu = ({ product, setShowMegaMenu, setSubMenu }: any) => {
 			></div> */}
 
 			{/* Content area */}
-			<div className="relative grid grid-cols-5 gap-5 px-40 py-10 bg-white">
+			<motion.div
+				initial={{ y: -20, opacity: 0 }}
+				animate={{ y: "0%", opacity: 1 }}
+				exit={{ y: "-10%", opacity: 0 }}
+				transition={{
+					duration: 0.01,
+					ease: "easeInOut",
+					y: { type: "spring", bounce: 0 },
+				}}
+				className="relative grid grid-cols-5 gap-5 px-40 py-10 bg-white"
+			>
 				{product?.map((item: any, i: number) => (
 					<div key={i} className="font-semibold space-y-5">
 						<h1 className="hover:opacity-50">{item.title}</h1>
@@ -35,8 +46,8 @@ const MegaMenu = ({ product, setShowMegaMenu, setSubMenu }: any) => {
 						</div>
 					</div>
 				))}
-			</div>
-		</div>
+			</motion.div>
+		</motion.div>
 	);
 };
 
